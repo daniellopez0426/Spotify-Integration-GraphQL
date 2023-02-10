@@ -9,10 +9,11 @@ const start = async () => {
     await graphqlServer.start();
     console.log("GraphQL server running at port", port);
     graphqlServer.applyMiddleware({
-        app
-    })
-    await new Promise((resolve = app.listen({ port }, resolve)));
+      app,
+    });
+    app.listen(port, () => console.log(`Server is running on port ${port}`));
   } catch (error) {
     console.log(error);
   }
 };
+start();
