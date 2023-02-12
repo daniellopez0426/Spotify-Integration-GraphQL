@@ -1,6 +1,7 @@
 import path, { join } from "path";
 import { readFileSync, readdirSync } from "fs";
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import resolvers from "./resolvers";
 
 const getTypeDefs = () => {
   let typeDefs = "";
@@ -16,6 +17,7 @@ const getTypeDefs = () => {
 
 const schema = makeExecutableSchema({
   typeDefs: getTypeDefs,
+  resolvers
 });
 
 export default schema;
