@@ -3,20 +3,20 @@ import { readFileSync, readdirSync } from "fs";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 import resolvers from "./resolvers";
 
-const getTypeDefs = () => {
-  let typeDefs = "";
-  const typeDefsDir = path.resolve(path.join("graphql", "typedefs"));
-  const gqlFiles = readdirSync(typeDefsDir);
-  gqlFiles.forEach((file) => {
-    typeDefs += readFileSync(join(typeDefsDir, file), {
+const getTypeDefinitions  = () => {
+  let typeDefinitions  = "";
+  const typeDefinitionsDir = path.resolve(path.join("graphql", "typedefinitions"));
+  const graphqlFiles = readdirSync(typeDefinitionsDir);
+  graphqlFiles.forEach((file) => {
+    typeDefinitions  += readFileSync(join(typeDefinitionsDir, file), {
       encoding: "utf-8",
     });
   });
-  return typeDefs;
+  return typeDefinitions ;
 };
 
 const schema = makeExecutableSchema({
-  typeDefs: getTypeDefs,
+  typeDefs : getTypeDefinitions ,
   resolvers
 });
 
