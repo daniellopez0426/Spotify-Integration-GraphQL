@@ -1,0 +1,3 @@
+mutation RequestSpotify($reqData: AddRequest!) {
+  createRequest(reqData: $reqData)
+}

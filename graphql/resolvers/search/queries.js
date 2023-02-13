@@ -1,9 +1,9 @@
 import { search } from "../../../api/search";
 
-const artistQueries = {
+const queries = {
   artists: async (_, { q }, context) => {
     return await search(q, "ARTIST");
   },
 };
 
-export default artistQueries;
+export default queries;

@@ -1,9 +1,12 @@
-import { artistQueries } from "./search";
+import { searchMutations, searchQueries } from "./search";
 
 const resolvers = {
   Query: {
-    ...artistQueries,
+    ...searchQueries,
   },
+  Mutation: {
+    ...searchMutations
+  }
 };
 
 export default resolvers;

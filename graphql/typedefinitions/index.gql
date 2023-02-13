@@ -1,3 +1,7 @@
 type Query {
   artists(q: String!): ArtistsResponse
 }
+
+type Mutation {
+  createRequest(reqData: AddRequest!): Boolean
+}

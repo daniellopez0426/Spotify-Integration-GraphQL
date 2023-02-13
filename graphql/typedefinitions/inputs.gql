@@ -1,0 +1,4 @@
+input AddRequest {
+    type: String!
+    name: String!
+}
