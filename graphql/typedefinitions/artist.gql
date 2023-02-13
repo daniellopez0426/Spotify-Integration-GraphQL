@@ -1,4 +1,4 @@
-type artist {
+type Artist {
     name: String!
     id: ID!
     popularity: Int
@@ -6,5 +6,19 @@ type artist {
     type: String
     uri: String
     href: String
-    images: [image]
+    images: [Image]
+}
+
+type ArtistResults implements PageReponse {
+    href: String
+    limit: Int
+    next: String
+    offset: Int
+    previous: String
+    total: Int
+    items: [Artist]
+}
+
+type ArtistsResponse {
+    artists: ArtistResults
 }

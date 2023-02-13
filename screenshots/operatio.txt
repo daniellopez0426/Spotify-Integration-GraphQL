@@ -1,0 +1,11 @@
+query ArtistsQuery($q: String!) {
+  artists(q: $q) {
+    artists {
+      items {
+        name,
+        genres,
+        popularity
+      }
+    }
+  }
+}
